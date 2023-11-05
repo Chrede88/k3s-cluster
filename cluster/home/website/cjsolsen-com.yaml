@@ -1,0 +1,16 @@
+---
+    apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: cjsolsen-com
+      namespace: website
+    spec:
+      secretName: cjsolsen-com-tls
+      issuerRef:
+        name: letsencrypt-production
+        kind: ClusterIssuer
+      commonName: "*.cjsolsen.com"
+      dnsNames:
+      - "cjsolsen.com"
+      - "*.cjsolsen.com"
+    

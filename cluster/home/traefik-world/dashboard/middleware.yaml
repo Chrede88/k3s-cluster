@@ -1,0 +1,8 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-world-dashboard-basicauth
+  namespace: traefik-world
+spec:
+  basicAuth:
+    secret: traefik-world-dashboard-auth

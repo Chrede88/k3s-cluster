@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloudflare-ddns-configmap
+  namespace: cloudflare-ddns
+data:
+  TZ: "Europe/Zurich"
+  ZONE: cjsolsen.com
+  PROXIED: "true"
+  RRTYPE: A
+  DELETE_ON_STOP: "false"
+  DNS_SERVER: "1.1.1.1"
+  CRON: "*/30 * * * *"

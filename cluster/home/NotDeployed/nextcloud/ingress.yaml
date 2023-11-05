@@ -1,0 +1,22 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+  annotations:
+    kubernetes.io/ingress.class: traefik-world
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`nextcloud.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: nextcloud
+          port: 8080
+      middlewares:
+        - name: default-headers
+          namespace: nextcloud
+  tls:
+    secretName: nextcloud-cjsolsen-com-tls

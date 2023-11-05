@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: local-cjsolsen-com
+  namespace: traefik-world
+spec:
+  secretName: traefik-world-cjsolsen-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "traefik-world.local.cjsolsen.com"
+  dnsNames:
+  - "traefik-world.local.cjsolsen.com"
+

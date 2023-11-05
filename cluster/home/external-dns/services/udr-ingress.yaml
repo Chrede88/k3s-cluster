@@ -1,0 +1,21 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: udr-ingress
+  namespace: external-dns
+  annotations:
+    kubernetes.io/ingress.class: traefik-internal
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`udr.local.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: udr-external-cname
+          port: 443
+          scheme: https
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: udr-cjsolsen-com-tls

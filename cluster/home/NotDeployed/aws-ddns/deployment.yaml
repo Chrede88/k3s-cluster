@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-ddns
+  namespace: aws-ddns
+  labels:
+    app: aws-ddns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-ddns
+  template:
+    metadata:
+      labels:
+        app: aws-ddns
+    spec:
+      containers:
+      - image: crazymax/ddns-route53:latest
+        name: aws-ddns
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: aws-ddns-configmap
+          - secretRef:
+              name: aws-ddns-secret

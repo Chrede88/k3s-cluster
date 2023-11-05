@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: pihole-cjsolsen-com
+  namespace: pihole
+spec:
+  secretName: pihole-cjsolsen-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "pihole.local.cjsolsen.com"
+  dnsNames:
+  - "pihole.local.cjsolsen.com"

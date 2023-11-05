@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: little-link
+  namespace: little-link
+  labels:
+    app: little-link
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: little-link
+  template:
+    metadata:
+      labels:
+        app: little-link
+    spec:
+      containers:
+      - image: ghcr.io/techno-tim/littlelink-server:latest
+        name: little-link
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: little-link-configmap

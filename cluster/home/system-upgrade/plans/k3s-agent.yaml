@@ -1,0 +1,24 @@
+apiVersion: upgrade.cattle.io/v1
+kind: Plan
+metadata:
+  name: k3s-agent
+  namespace: system-upgrade
+  labels:
+    k3s-upgrade: agent
+spec:
+  concurrency: 1
+  version: v1.28.2+k3s1
+  nodeSelector:
+    matchExpressions:
+      - {key: node.kubernetes.io/instance-type, operator: In, values: [k3s]}
+      - {key: node-role.kubernetes.io/control-plane, operator: DoesNotExist}
+  serviceAccountName: system-upgrade
+  prepare:
+    # Defaults to the same "resolved" tag that is used for the `upgrade` container, NOT `latest`
+    image: rancher/k3s-upgrade
+    args: ["prepare", "k3s-server"]
+  drain:
+    force: true
+    skipWaitForDeleteTimeout: 60
+  upgrade:
+    image: rancher/k3s-upgrade

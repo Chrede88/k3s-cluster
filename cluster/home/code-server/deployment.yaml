@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-server
+  namespace: code-server
+  labels:
+    app: code-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: code-server
+  template:
+    metadata:
+      labels:
+        app: code-server
+    spec:
+      volumes:
+      - name: code-server
+        persistentVolumeClaim:
+          claimName: code-server-pvc
+      containers:
+      - image: lscr.io/linuxserver/code-server:4.18.0
+        name: code-server
+        imagePullPolicy: IfNotPresent
+        ports:
+         - containerPort: 8443
+           name: https
+        envFrom:
+          - configMapRef:
+              name: code-server-configmap
+          - secretRef:
+              name: code-server-secret
+        volumeMounts:
+         - mountPath: /config
+           name: code-server

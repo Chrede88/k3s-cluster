@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uptime-kuma-svc
+  namespace: uptime-kuma
+  labels:
+    app: uptime-kuma
+spec:
+  selector:
+    app: uptime-kuma
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3001

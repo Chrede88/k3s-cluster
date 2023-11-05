@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxmox-external-cname
+  namespace: external-dns
+spec:
+  type: ExternalName
+  externalName: proxmox0.local.cjsolsen.com
+  ports:
+    - port: 8006

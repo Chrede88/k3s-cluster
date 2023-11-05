@@ -1,0 +1,50 @@
+- name: Prepare Longhorn install
+  hosts: 'servers'
+  tasks:
+    - name: install open-iscsi
+      apt:
+        name: open-iscsi
+        state: present
+        update_cache: true
+      become: true
+
+    - name: Make sure open-iscsi is started
+      systemd:
+        name: open-iscsi
+        state: started
+      become: true
+
+    - name: install nfs-common
+      apt:
+        name: nfs-common
+        state: present
+        update_cache: true
+      become: true
+
+    - name: install bash
+      apt:
+        name: bash
+        state: present
+        update_cache: true
+      become: true
+
+    - name: install curl
+      apt:
+        name: curl
+        state: present
+        update_cache: true
+      become: true
+
+    - name: install grep
+      apt:
+        name: grep
+        state: present
+        update_cache: true
+      become: true
+
+    - name: install jq
+      apt:
+        name: jq
+        state: present
+        update_cache: true
+      become: true

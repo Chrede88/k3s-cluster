@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: code-server-configmap
+  namespace: code-server
+data:
+  TZ: "Europe/Zurich"
+  PUID: "1000"
+  PGID: "1000"
+  
