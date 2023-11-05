@@ -19,16 +19,8 @@
     }
   ],
   "ignorePaths": [
-    "cluster/home/NotDeployed/"
-  ],
-  "hostRules": [
-    {
-      "hostType": "docker",
-      "matchHost": "ghcr.io",
-      "username": "chrede88",
-      "encrypted": {
-        "password": "wcFMA/xDdHCJBTolAQ/+MHXIpJzT3cSgedFnWXLx8vxP0/lmZSXwPqBfJFIkPJmsRVfeikmGExnk9r+qF6+Wq+pofjVt8WC9RhcmcUhBWI2P8IQWDclww6HF4LDijDpL9Ndl33hO1aB3j3AEGkdYCGsMEIko5HLmndyunTvzbulHUvozVSXcx9679cSHyc98IhbNR37NPhfIdfxSCR2L5gtGKTb/7u+SsRFqWk3UYS4IJzaZSYwrzZZxNU+MB7wkzGmLft+SwBGZdEARE6IRBTypai9YdXwbVtN8pSgjOfkhQXsaGL+r86CRKoi615VqLCq7Hq1BZoZGmMDmbJ4AiTjvRGKwSGE01WGd0jdAQbXr8yinmM/sti4SJVDXU/Pcm8f+WGwYmzu+8eh93VWiXSB//5QBa/fxtYc5jvxENdfTkD1ttJxn7NUJsw8Cm0hyBTil1fUISsPDW1Z9d8VXppajk/tlLquGuncYu8E+DAP2VUhRMh6IV+xYW4KnoN02X5uYsYvUDbwQeXUUK9aD+J47N26P/8fMIjckUP2u3zLtwOOnf5CNPMMwN/UPny4ghJA3iDdA4rvdSkJY2aSFHEtgbrSugeaBR2PUrUp0c+7ZycQp1bDOJk3WaPMwbA98xK4s/hQJfGsZ+/0/v6XsuSjBQKCvOuqgl2pAR1Cs4OyLoJBXqj6+daQ5i5BiLvzSdwHzoBLs0Do/WGIfEOzoR8x0OMZhKVB1iC/+TZL12YVfMOcYckEMb6fDf0sGGmhvZ1+uxv1lk5iJ5WefdFfTGkx5UMsXhkLoohtoIKTfdWelRdxR2D6SRLm0g33bwJ9sE8DhxJ8t7PbWKyVnwHCvh0o5FYSJSwfa"
-      }
-    }
+    "cluster/home/NotDeployed/",
+    "cluster/home/webiste/",
+    "cluster/home/l1nkr-site/"
   ]
 }
