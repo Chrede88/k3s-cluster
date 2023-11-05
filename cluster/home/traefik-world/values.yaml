@@ -1,9 +1,7 @@
 image:
-  # -- Traefik image host registry
   registry: docker.io
-  # -- Traefik image repository
   repository: traefik
-  # -- Traefik image pull policy
+  tag: v25.0.0
   pullPolicy: IfNotPresent
 
 # Configure the deployment
