@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: udr-external-cname
+  namespace: external-dns
+spec:
+  type: ExternalName
+  externalName: udr0.local.cjsolsen.com
+  ports:
+    - port: 443

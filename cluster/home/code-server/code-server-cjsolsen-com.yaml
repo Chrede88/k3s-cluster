@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: code-server-cjsolsen-com
+  namespace: code-server
+spec:
+  secretName: code-server-cjsolsen-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "code-server.local.cjsolsen.com"
+  dnsNames:
+  - "code-server.local.cjsolsen.com"

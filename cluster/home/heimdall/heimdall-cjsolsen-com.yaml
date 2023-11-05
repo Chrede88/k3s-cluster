@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: heimdall-cjsolsen-com
+  namespace: heimdall
+spec:
+  secretName: heimdall-cjsolsen-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "heimdall.local.cjsolsen.com"
+  dnsNames:
+  - "heimdall.local.cjsolsen.com"

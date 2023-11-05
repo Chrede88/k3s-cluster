@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website
+  namespace: website
+  labels:
+    app: website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - image: ghcr.io/chrede88/website-docker:v1.3.1
+        name: website
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: website-ghcr-secret

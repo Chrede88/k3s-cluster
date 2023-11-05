@@ -1,0 +1,4 @@
+# ansible stuff
+.env/
+*.log
+ansible.cfg

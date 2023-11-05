@@ -1,0 +1,20 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: little-link
+  namespace: little-link
+  annotations:
+    kubernetes.io/ingress.class: traefik-world
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`littlelink.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: little-link-web-svc
+          port: 80
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: littlelink-cjsolsen-com-tls

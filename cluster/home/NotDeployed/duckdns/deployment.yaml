@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: duckdns
+  namespace: duckdns
+  labels:
+    app: duckdns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: duckdns
+  template:
+    metadata:
+      labels:
+        app: duckdns
+    spec:
+      containers:
+      - image: lscr.io/linuxserver/duckdns:latest
+        name: duckdns
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: duckdns-configmap
+          - secretRef:
+              name: duckdns-token

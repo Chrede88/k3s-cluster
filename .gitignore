@@ -1,0 +1,5 @@
+# apple stuff
+.DS_Store
+
+# cluster stuff
+cluster/home/update_dockerconfigjson.txt

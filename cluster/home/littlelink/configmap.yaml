@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: little-link-configmap
+  namespace: little-link
+data:
+  TZ: "Europe/Zurich"
+  META_TITLE: "Christian Olsen"
+  META_DESCRIPTION: "Christian Olsen Link Page"
+  META_AUTHOR: "Christian Olsen"
+  META_KEYWORDS: "Quantum Physics, Homelab, Biking"
+  LANG: "en"
+  THEME: "Dark"
+  FAVICON_URL: "https://github.com/Chrede88/cjsolsen.com/blob/master/assets/media/icon.png"
+  AVATAR_URL: "https://avatars.githubusercontent.com/u/9137189?v=4"
+  #AVATAR_2X_URL: https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_400x400.jpg
+  AVATAR_ALT: "Christian Profile Pic"
+  NAME: "Christian Olsen"
+  BIO: "Hey! Connect by clicking the links"
+  CUSTOM_BUTTON_TEXT: "Personal Website"
+  CUSTOM_BUTTON_URL: "https://cjsolsen.com"
+  CUSTOM_BUTTON_COLOR: "#000000"
+  CUSTOM_BUTTON_TEXT_COLOR: "#ffffff"
+  CUSTOM_BUTTON_ALT_TEXT: "My Personal Website"
+  CUSTOM_BUTTON_NAME: "WEBSITE"
+  CUSTOM_BUTTON_ICON: "fas laptop"
+  GITHUB: "https://github.com/Chrede88"
+  LINKED_IN: "https://www.linkedin.com/in/christian-olsen-a3114a1b8/"
+  EMAIL: "christian@cjsolsen.com"
+  INSTAGRAM: "https://instagram.com/christianjsolsen?igshid=YmMyMTA2M2Y="
+  FACEBOOK: "https://www.facebook.com/CJS.Olsen/"
+  SNAPCHAT: "https://www.snapchat.com/add/chredeo?share_id=FcTEv654SEyMRGPN4ItCKg&locale=en_CH"
+  FOOTER: "Christian Olsen © 2023"
+  BUTTON_ORDER: WEBSITE,GITHUB,LINKED_IN
+  #TWITTER: https://l.technotim.live/twitter
+  #YOUTUBE: https://l.technotim.live/subscribe
+  #TWITCH: https://l.technotim.live/twitch/
+  #DISCORD: https://l.technotim.live/discord
+  #TIKTOK: https://l.technotim.live/tiktok
+  #KIT: https://l.technotim.live/gear
+  #FACEBOOK_MESSENGER: https://facebook.com
+  #PRODUCT_HUNT: https://www.producthunt.com/
+  #SPOTIFY: https://www.spotify.com/
+  #REDDIT: https://www.reddit.com/
+  #MEDIUM: https://medium.com
+  #PINTEREST: https://www.pinterest.com/
+  #EMAIL_ALT: you@example.com
+  #SOUND_CLOUD: https://souncloud.com
+  #FIGMA: https://figma.com
+  #TELEGRAM: https://telegram.org/
+  #TUMBLR: https://www.tumblr.com/
+  #STEAM: https://steamcommunity.com/
+  #VIMEO: https://vimeo.com/
+  #WORDPRESS: https://wordpress.com/
+  #GOODREADS: https://www.goodreads.com/
+  #SKOOB: https://www.skoob.com.br/

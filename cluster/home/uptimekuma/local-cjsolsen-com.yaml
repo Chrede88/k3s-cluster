@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: uptime-kuma-cjsolsen-com
+  namespace: uptime-kuma
+spec:
+  secretName: uptime-kuma-cjsolsen-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "uptime-kuma.local.cjsolsen.com"
+  dnsNames:
+  - "uptime-kuma.local.cjsolsen.com"

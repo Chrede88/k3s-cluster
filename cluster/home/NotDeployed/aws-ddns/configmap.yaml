@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-ddns-configmap
+  namespace: aws-ddns
+data:
+  TZ: "Europe/Zurich"
+  SCHEDULE: "*/30 * * * *"
+  LOG_LEVEL: "info"
+  LOG_JSON: "false"
+  DDNSR53_ROUTE53_HOSTEDZONEID: "ZQ47Q42WIADJL"
+  DDNSR53_ROUTE53_RECORDSSET_0_NAME: "vpn.cjsolsen.com"
+  DDNSR53_ROUTE53_RECORDSSET_0_TYPE: "A"
+  DDNSR53_ROUTE53_RECORDSSET_0_TTL: "300"
+  DDNSR53_ROUTE53_RECORDSSET_1_NAME: "littlelink.cjsolsen.com"
+  DDNSR53_ROUTE53_RECORDSSET_1_TYPE: "A"
+  DDNSR53_ROUTE53_RECORDSSET_1_TTL: "300"

@@ -1,0 +1,98 @@
+image:
+  # -- Traefik image host registry
+  registry: docker.io
+  # -- Traefik image repository
+  repository: traefik
+  # -- Traefik image pull policy
+  pullPolicy: IfNotPresent
+
+# Configure the deployment
+#
+deployment:
+  enabled: true
+  kind: Deployment
+  replicas: 2
+  terminationGracePeriodSeconds: 60
+  minReadySeconds: 0
+  annotations: {}
+  labels: {}
+  podAnnotations: {}
+  podLabels: {}
+  additionalContainers: []
+  additionalVolumes: []
+  initContainers: []
+  shareProcessNamespace: false
+  dnsConfig: {}
+  imagePullSecrets: []
+  lifecycle: {}
+
+ingressRoute:
+  dashboard:
+    enabled: false
+
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 0
+    maxSurge: 1
+
+providers:
+  kubernetesCRD:
+    enabled: true
+    ingressClass: traefik-world
+    allowCrossNamespace: false
+    allowExternalNameServices: true
+    allowEmptyServices: false
+    namespaces: []
+
+  kubernetesIngress:
+    enabled: true
+    allowExternalNameServices: true
+    allowEmptyServices: false
+    namespaces: []
+    publishedService:
+      enabled: false
+
+globalArguments:
+  - "--global.sendanonymoususage=false"
+  - "--global.checknewversion=false"
+
+
+additionalArguments:
+ - "--serversTransport.insecureSkipVerify=true"
+ - "--log.level=INFO"
+
+ports:
+  web:
+    port: 8000
+    expose: true
+    exposedPort: 80
+    protocol: TCP
+    redirectTo:
+      port: websecure
+      priority: 10
+  websecure:
+    port: 8443
+    expose: true
+    exposedPort: 443
+    protocol: TCP
+    http3:
+      enabled: false
+    tls:
+      enabled: true
+
+service:
+  enabled: true
+  type: LoadBalancer
+  annotations: {}
+  annotationsTCP: {}
+  annotationsUDP: {}
+  labels: {}
+  spec:
+    loadBalancerIP: 10.10.30.82 # this should be an IP in the MetalLB range
+  loadBalancerSourceRanges: []
+  externalIPs: []
+
+# -- Whether Role Based Access Control objects like roles and rolebindings should be created
+rbac:
+  enabled: true

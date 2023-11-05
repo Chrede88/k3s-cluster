@@ -1,0 +1,26 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: longhorn-frontend
+  namespace: longhorn-system
+  annotations:
+    kubernetes.io/ingress.class: traefik-internal
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`longhorn.local.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: longhorn-frontend
+          port: 80
+      middlewares:
+        - name: default-headers
+          namespace: longhorn-system
+        - name: longhorn-dashboard-basicauth
+          namespace: longhorn-system
+        - name: cors-allow-all
+          namespace: longhorn-system
+  tls:
+    secretName: longhorn-cjsolsen-com-tls

@@ -1,0 +1,20 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: l1nkrsite
+  namespace: l1nkrsite
+  annotations:
+    kubernetes.io/ingress.class: traefik-world
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`l1nkr.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: l1nkrsite-web-svc
+          port: 80
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: l1nkr-cjsolsen-com-tls

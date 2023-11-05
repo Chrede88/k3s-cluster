@@ -1,0 +1,31 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-admin-page
+  namespace: pihole
+spec:
+  replacePathRegex:
+    regex: ^/$
+    replacement: /admin
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pihole
+  namespace: pihole
+  annotations:
+    kubernetes.io/ingress.class: traefik-internal
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`pihole.local.cjsolsen.com`)
+      kind: Rule
+      services:
+        - name: pihole-web-svc
+          port: 80
+      middlewares:
+        - name: pihole-headers
+        - name: redirect-admin-page
+  tls:
+    secretName: pihole-cjsolsen-com-tls

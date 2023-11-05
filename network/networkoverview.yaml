@@ -1,0 +1,63 @@
+Network overview
+
+Server vLAN: 10.10.30.0/24
+DHCP: 10.10.30.100 - 10.10.30.255
+Gateway: 10.10.30.1
+
+Proxmox0 server: 10.10.30.2
+Procmox1 server: 10.10.30.20
+Proxmox2 server: 10.10.30.40
+
+VMs:
+odin:
+  host: proxmox0
+  role: control-plane/etcd
+  ip: 10.10.30.3
+  ram: 2GB/8GB
+  cpu: 4.00
+heimdallr:
+  host: proxmox0
+  role: worker
+  ip: 10.10.30.4
+  ram: 2GB/8GB
+  cpu: 4.00
+loki:
+  host: proxmox0
+  role: worker
+  ip: 10.10.30.5
+  ram: 2GB/8GB
+  cpu: 4.00
+
+thor: 
+  host: proxmox1
+  role: control-plane/etcd
+  ip: 10.10.30.21
+  ram: 2GB/8GB
+  cpu: 2.00
+
+baldr: 
+  host: proxmox2
+  role: control-plane/etcd
+  ip: 10.10.30.41
+  ram: 2GB/8GB
+  cpu: 4.00
+frigg:
+  host: proxmox2
+  role: worker
+  ip: 10.10.30.42
+  ram: 2GB/8GB
+  cpu: 4.00
+freyja:
+  host: proxmox2
+  role: worker
+  ip: 10.10.30.43
+  ram: 2GB/8GB
+  cpu: 4.00
+
+MetalLB:
+Metallb range: 10.10.30.80 - 10.10.30.98
+
+Traefik internal: 10.10.30.80
+Pihole: 10.10.30.81
+Traefik world: 10.10.30.82
+Kube-vip: 10.10.30.99
