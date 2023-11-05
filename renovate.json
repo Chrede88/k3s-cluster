@@ -20,7 +20,7 @@
   ],
   "ignorePaths": [
     "cluster/home/NotDeployed/",
-    "cluster/home/webiste/",
+    "cluster/home/website/",
     "cluster/home/l1nkr-site/"
   ]
 }
