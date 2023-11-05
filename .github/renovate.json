@@ -1,0 +1,61 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "timezone": "Europe/Zurich",
+  "schedule": [
+    "after 10pm and before 6am every weekday",
+    "every weekend"
+  ],
+  "kubernetes": {
+    "fileMatch": ["\\.ya?ml$"]
+  },
+  "regexManagers": [
+    {
+      "description": "Match Helm values for non-standard yamls",
+      "fileMatch": "\\.ya?ml$",
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "repository:\\s?\"?(?<depName>[^\\s\"]*)\"?\\s*?tag:\\s?\"?(?<currentValue>[^\\s\"]*)\"?"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "ignorePaths": [
+    "cluster/home/NotDeployed/",
+    "cluster/home/website/",
+    "cluster/home/l1nkr-site/"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["type/major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "labels": ["type/minor"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "labels": ["type/patch"]
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "labels": ["type/digest"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "addLabels": ["renovate/container"]
+    },
+    {
+      "matchDatasources": ["helm"],
+      "addLabels": ["renovate/helm"]
+    },
+    {
+      "matchDatasources": ["github-action"],
+      "addLabels": ["renovate/github-action"]
+    }
+  ]
+}
