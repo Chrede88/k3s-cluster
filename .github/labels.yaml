@@ -18,13 +18,15 @@
 # Area
 - name: area/ansible
   color: "72ccf3"
-  description: >-
-    Changes made in the ansible directory
+  description: "Changes made in the ansible directory"
 - name: area/github
   color: "72ccf3"
-  description: >-
-    Changes made in the github directory
+  description: "Changes made in the github directory"
 - name: area/kubernetes
   color: "72ccf3"
-  description: >-
-    Changes made in the cluster directory
+  description: "Changes made in the cluster directory"
+# Others
+- name: bug
+  color: "d73a4a"
+  description: "Something isn't working"
+- name: 
