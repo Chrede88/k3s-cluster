@@ -5,9 +5,9 @@ metadata:
   namespace: cloudflare-ddns
 data:
   TZ: "Europe/Zurich"
-  ZONE: cjsolsen.com
+  DOMAINS: cjsolsen.com
   PROXIED: "true"
-  RRTYPE: A
+  IP6_PROVIDER: "none"
   DELETE_ON_STOP: "false"
-  DNS_SERVER: "1.1.1.1"
-  CRON: "*/30 * * * *"
+  UPDATE_CRON: "@every 10m"
+  UPTIMEKUMA: "https://uptime-kuma.local.cjsolsen.com/api/push/dau38c80rV?status=up&msg=OK&ping="

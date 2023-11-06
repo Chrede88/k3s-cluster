@@ -16,7 +16,7 @@ spec:
         app: cloudflare-ddns
     spec:
       containers:
-      - image: oznu/cloudflare-ddns:latest
+      - image: favonia/cloudflare-ddns@sha256:bc38f0e90705f326f52c469025fb2522c4f8b2edd1ec0348b3e28c88d3701ad8
         name: cloudflare-ddns
         imagePullPolicy: Always
         envFrom:
