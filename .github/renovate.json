@@ -6,7 +6,7 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "timezone": "Europe/Zurich",
   "schedule": [
-    "after 10pm and before 6am every weekday",
+    "after 6pm and before 6am every weekday",
     "every weekend"
   ],
   "kubernetes": {
