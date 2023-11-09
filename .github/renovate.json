@@ -4,6 +4,8 @@
     "config:base"
   ],
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "commitMessagePrefix": "🤖",
+  "reviewers": ["chrede88"],
   "timezone": "Europe/Zurich",
   "schedule": [
     "after 6pm and before 6am every weekday",
