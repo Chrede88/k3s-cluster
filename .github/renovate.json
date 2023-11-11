@@ -58,6 +58,10 @@
     {
       "matchDatasources": ["github-action"],
       "addLabels": ["renovate/github-action"]
+    },
+    {
+      "matchPackageNames": ["linuxserver/heimdall"],
+      "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+(\\.[0-9]+)?$/"
     }
   ]
 }
