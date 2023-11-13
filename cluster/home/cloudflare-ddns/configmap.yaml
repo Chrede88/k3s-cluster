@@ -10,4 +10,4 @@ data:
   IP6_PROVIDER: "none"
   DELETE_ON_STOP: "false"
   UPDATE_CRON: "@every 10m"
-  UPTIMEKUMA: "https://uptime-kuma.local.cjsolsen.com/api/push/dau38c80rV?status=up&msg=OK&ping="
+  UPTIMEKUMA: "https://uptime-kuma.local.cjsolsen.com/api/push/AzX3yMXwRV?status=up&msg=OK&ping="
