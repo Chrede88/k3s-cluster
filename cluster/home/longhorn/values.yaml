@@ -25,7 +25,7 @@ image:
   longhorn:
     engine:
       repository: longhornio/longhorn-engine
-      tag: v1.5.2
+      tag: v1.5.3
     manager:
       repository: longhornio/longhorn-manager
       tag: v1.5.2
