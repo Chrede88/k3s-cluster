@@ -14,15 +14,6 @@
   "kubernetes": {
     "fileMatch": ["\\.ya?ml$"]
   },
-  "customManagers": [
-    {
-      "description": "Update k3s version",
-      "customType": "regex",
-      "fileMatch": "\\.ya?ml$",
-      "matchStrings": ["datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?\"(?<currentValue>.*)\"\n"],
-      "versioningTemplate": "semver-coerced"
-    }
-  ],
   "regexManagers": [
     {
       "description": "Match Helm values for non-standard yamls",
