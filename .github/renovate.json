@@ -25,11 +25,11 @@
       "datasourceTemplate": "docker"
     },
     {
-      "description": "Match values for non-standard yamls",
+      "description": "Match K3s system upgrader values for non-standard yamls",
       "fileMatch": "\\.ya?ml$",
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?'(?<currentValue>.*)'\n"
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\n.*?'(?<currentValue>.*)'\n"
       ]
     }
   ],
