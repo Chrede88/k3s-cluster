@@ -16,14 +16,21 @@
   },
   "regexManagers": [
     {
+      "description": "Match Helm values for non-standard yamls",
+      "fileMatch": "\\.ya?ml$",
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "repository:\\s?\"?(?<depName>[^\\s\"]*)\"?\\s*?tag:\\s?\"?(?<currentValue>[^\\s\"]*)\"?"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
       "description": "Match values for non-standard yamls",
       "fileMatch": "\\.ya?ml$",
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "repository:\\s?\"?(?<depName>[^\\s\"]*)\"?\\s*?tag:\\s?\"?(?<currentValue>[^\\s\"]*)\"?",
         "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?\"(?<currentValue>.*)\"\n"
-      ],
-      "datasourceTemplate": "docker"
+      ]
     }
   ],
   "ignorePaths": [
