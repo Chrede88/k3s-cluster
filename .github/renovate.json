@@ -29,7 +29,7 @@
       "fileMatch": "\\.ya?ml$",
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\n.*?(?<currentValue>.*)\n"
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\n.*?'(?<currentValue>.*)'\n"
       ]
     }
   ],
