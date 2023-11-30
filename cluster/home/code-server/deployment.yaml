@@ -10,6 +10,8 @@ spec:
   selector:
     matchLabels:
       app: code-server
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
