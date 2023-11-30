@@ -20,7 +20,7 @@ spec:
         persistentVolumeClaim:
           claimName: code-server-pvc
       containers:
-      - image: ghcr.io/coder/code-server:4.19.0
+      - image: ghcr.io/coder/code-server:4.19.1
         name: code-server
         imagePullPolicy: IfNotPresent
         ports:
