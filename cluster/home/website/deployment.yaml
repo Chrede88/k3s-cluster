@@ -16,7 +16,7 @@ spec:
         app: website
     spec:
       containers:
-      - image: ghcr.io/chrede88/website-docker:v1.3.2
+      - image: ghcr.io/chrede88/qubtdocker:v1.0.0
         name: website
         imagePullPolicy: Always
       imagePullSecrets:
