@@ -8,7 +8,7 @@ metadata:
 spec:
   concurrency: 1
   # renovate: datasource=github-releases depName=k3s-io/k3s
-  version: 'v1.28.3+k3s2'
+  version: 'v1.28.4+k3s2'
   nodeSelector:
     matchExpressions:
       - {key: node.kubernetes.io/instance-type, operator: In, values: [k3s]}
