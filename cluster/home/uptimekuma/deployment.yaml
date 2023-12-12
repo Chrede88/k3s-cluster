@@ -21,7 +21,7 @@ spec:
             claimName: uptime-kuma-pvc
       containers:
         - name: uptime-kuma
-          image: louislam/uptime-kuma:1.23.9
+          image: louislam/uptime-kuma:1.23.10
           ports:
             - containerPort: 3001
           volumeMounts:
