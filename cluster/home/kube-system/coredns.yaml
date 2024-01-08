@@ -44,5 +44,5 @@ metadata:
     objectset.rio.cattle.io/hash: bce283298811743a0386ab510f2f67ef74240c57
   name: coredns
   namespace: kube-system
-  resourceVersion: "61936105"
+  resourceVersion: "65060956"
   uid: df1db841-8ee7-42d8-ae2b-576c3b6a5815
