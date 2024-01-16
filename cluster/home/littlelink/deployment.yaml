@@ -16,7 +16,7 @@ spec:
         app: little-link
     spec:
       containers:
-      - image: ghcr.io/techno-tim/littlelink-server@sha256:186fcad130cad7ff42e9540b04b14b884a8c595fc968d73f0636874c6ccc5a1e
+      - image: ghcr.io/techno-tim/littlelink-server@sha256:368c9aad92786ea68afb550cc1387c7a7fe676481fc3f197684c3159183a18ba
         name: little-link
         imagePullPolicy: Always
         envFrom:
