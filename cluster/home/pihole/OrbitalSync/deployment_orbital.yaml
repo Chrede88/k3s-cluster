@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: orbital-sync
-        image: mattwebbio/orbital-sync:1.5.2
+        image: mattwebbio/orbital-sync:1.5.7
         envFrom:
           - configMapRef:
               name: orbital-sync-config
