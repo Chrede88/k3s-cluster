@@ -1,7 +1,7 @@
 image:
   repository: quay.io/jetstack/cert-manager-controller
   pullPolicy: IfNotPresent
-  tag: v1.14.1
+  tag: v1.14.2
 installCRDs: false
 replicaCount: 2
 extraArgs:
