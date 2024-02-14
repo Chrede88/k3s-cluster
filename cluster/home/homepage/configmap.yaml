@@ -11,13 +11,6 @@ data:
   settings.yaml: |
     title: Cjso Homepage
 
-    background:
-      image: https://raw.githubusercontent.com/chrede88/k3s-cluster/main/cluster/home/homepage/background/background.jpg
-      blur: sm
-      saturate: 100
-      brightness: 50
-      opacity: 100
-
     theme: dark
     color: slate
 
@@ -35,11 +28,11 @@ data:
             href: https://github.com/chrede88
             description: my github repo
         - Website:
-            icon: https://shlink.io/images/shlink-logo-blue.svg
+            icon: https://raw.githubusercontent.com/chrede88/k3s-cluster/main/cluster/home/homepage/icons/cjso.svg
             href: https://cjsolsen.com
             description: main website
         - LinkTree:
-            icon: https://shlink.io/images/shlink-logo-blue.svg
+            icon: https://raw.githubusercontent.com/chrede88/k3s-cluster/main/cluster/home/homepage/icons/cjso.svg
             href: https://l1nkr.cjsolsen.com
             description: linktree website
   widgets.yaml: |
