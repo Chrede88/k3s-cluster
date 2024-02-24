@@ -17,24 +17,54 @@ data:
     useEqualHeights: true
 
     layout:
+      Network:
+        header: true
+        style: row
+        columns: 3
       Other:
         header: true
         style: row
         columns: 3
   services.yaml: |
+    - Network:
+        - Unifi:
+            icon: unifi.svg
+            href: https://udr.local.cjsolsen.com
+            description: Unifi Network Application
+            widget:
+              type: unifi
+              url: https://udr.local.cjsolsen.com
+              username: "{{HOMEPAGE_VAR_UNIFI_NETWORK_USERNAME}}"
+              password: "{{HOMEPAGE_VAR_UNIFI_NETWORK_PASSWORD}}"
+        - Pihole:
+            icon: pi-hole.svg
+            href: http://pihole-0.pihole.pihole.svc.cluster.local
+            description: pihole-0
+            widget:
+              type: pihole
+              url: http://pihole-0.pihole.pihole.svc.cluster.local
+              key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY}}"
+        - Uptime Kuma:
+            icon: uptime-kuma.svg
+            href: http://uptime-kuma-svc.uptime-kuma.svc.cluster.local
+            description: Uptime Kuma
+            widget:
+              type: uptimekuma
+              url: http://uptime-kuma-svc.uptime-kuma.svc.cluster.local
+              slug: default
     - Other:
         - GitHub:
             icon: github.svg
             href: https://github.com/chrede88
-            description: my github repo
+            description: My Github Repo
         - Website:
             icon: https://raw.githubusercontent.com/chrede88/k3s-cluster/main/cluster/home/homepage/icons/cjso.svg
             href: https://cjsolsen.com
-            description: main website
+            description: Main Website
         - LinkTree:
             icon: https://raw.githubusercontent.com/chrede88/k3s-cluster/main/cluster/home/homepage/icons/cjso.svg
             href: https://l1nkr.cjsolsen.com
-            description: linktree website
+            description: Linktree Website
   widgets.yaml: |
     - resources:
         cpu: true
